@@ -1,8 +1,10 @@
 import WaitlistForm from '@/components/WaitlistForm';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center bg-white text-gray-900">
+    <main className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+      <ThemeToggle />
 
       {/* Hero image — full width, no stretch */}
       {/* eslint-disable-next-line @next/next/no-img-element */}

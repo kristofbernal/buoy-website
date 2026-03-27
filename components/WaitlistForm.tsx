@@ -40,8 +40,8 @@ export default function WaitlistForm() {
             placeholder="your@email.com"
             value={email}
             onChange={(e) => setEmail (e.target.value)}
-            disabled={status === 'loading' || status === 'success'}
-            className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled = {status === 'loading' || status === 'success'}
+            className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-non focus:ring-2 focus:ring-blue-500"
         />
         <button
             type="submit"
@@ -51,8 +51,12 @@ export default function WaitlistForm() {
             {status === 'loading' ? 'Joining...' : status === 'success' ? 'You\'re in!' : 'Join Waitlist'}
         </button>
 
-         {status === 'success' && <p className="text-green-500 mt-2">Thanks for joining the waitlist! I'll be in touch.</p>}
-         {status === 'error' && <p className="text-red-500 mt-2">Something went wrong. Please try again.</p>}
+         {status === 'success' && (
+            <p className="text-green-600 text-sm mt-2">Thanks for joining the waitlist! I'll be in touch.</p>
+        )}
+         {status === 'error' && (
+            <p className="text-red-500 text-sm mt-2">Something went wrong. Please try again.</p>
+        )}
     </form>
   );
 }

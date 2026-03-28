@@ -11,14 +11,11 @@ export default function WaitlistForm() {
     setStatus('loading');
 
     try {
-        const res = await fetch('https://app.kit.com/forms/9254307/subscriptions', {
+        const res = await fetch('/api/waitlist', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email_address: email }),
-        }
-        );
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+        });
 
         if (res.ok) {
             setStatus('success');
@@ -33,7 +30,7 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm: flex-row gap-2 w-full max-w-md">
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
         <input
             type="email"
             required
@@ -41,7 +38,7 @@ export default function WaitlistForm() {
             value={email}
             onChange={(e) => setEmail (e.target.value)}
             disabled = {status === 'loading' || status === 'success'}
-            className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-non focus:ring-2 focus:ring-blue-500"
+            className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
             type="submit"

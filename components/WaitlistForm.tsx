@@ -39,12 +39,12 @@ export default function WaitlistForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'loading' || status === 'success'}
-              className="flex-1 px-4 h-12 sm:h-10 text-base rounded-[10px] border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FCC527] transition-colors duration-500"
+              className="flex-1 px-5 py-4 sm:py-2 text-lg sm:text-base appearance-none rounded-[10px] border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FCC527] transition-colors duration-500"
           />
           <button
               type="submit"
               disabled={status === 'loading' || status === 'success'}
-              className="px-6 h-12 sm:h-10 text-base rounded-[10px] bg-[#FCC527] text-white font-bold hover:bg-[#e0b020] disabled:opacity-50 transition-colors"
+              className="px-6 py-4 sm:py-2 text-lg sm:text-base rounded-[10px] bg-[#FCC527] text-white font-bold hover:bg-[#e0b020] disabled:opacity-50 transition-colors"
           >
               {status === 'loading' ? 'Joining...' : status === 'success' ? 'You\'re in!' : 'Join Waitlist'}
           </button>

@@ -7,8 +7,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Buoy — Menu Bar Notepad for macOS",
+  title: "Buoy Waitlist",
   description: "A lightweight, always-on-top floating notepad that lives in your menu bar. Join the waitlist.",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({

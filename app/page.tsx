@@ -3,15 +3,25 @@ import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-500">
+    <main className="min-h-screen min-w-[320px] flex flex-col items-center bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-500">
       <ThemeToggle />
 
       {/* Hero image — crossfades between light and dark */}
-      <div className="relative w-full">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/hero-light.png" alt="Buoy app preview" className="w-full object-cover transition-opacity duration-500 dark:opacity-0" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/hero-dark.png" alt="Buoy app preview" className="w-full object-cover absolute inset-0 opacity-0 transition-opacity duration-500 dark:opacity-100" />
+      <div className="flex w-full justify-center overflow-hidden">
+        <div className="relative aspect-[2880/340] w-full min-w-[1200px] flex-none">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-light.png"
+            alt="Buoy app preview"
+            className="absolute inset-0 h-full w-full object-cover object-[48%_center] transition-opacity duration-500 dark:opacity-0"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-dark.png"
+            alt="Buoy app preview"
+            className="absolute inset-0 h-full w-full object-cover object-[48%_center] opacity-0 transition-opacity duration-500 dark:opacity-100"
+          />
+        </div>
       </div>
 
       {/* Hero content */}
@@ -42,7 +52,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mb-8 text-gray-400 text-sm">
-        © {new Date().getFullYear()} Buoy
+        © {new Date().getFullYear()} Gabe Mempin
       </footer>
     </main>
   );

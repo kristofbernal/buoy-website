@@ -1,5 +1,6 @@
 import ThemeToggle from '@/components/ThemeToggle';
 import CopyButton from '@/components/CopyButton';
+import FloatText from '@/components/FloatText';
 
 const INSTALL_CMD = 'curl -fsSL https://buoy.gabemempin.me/install.sh | sh';
 
@@ -106,12 +107,11 @@ export default function DownloadPage() {
 
       {/* Closing line */}
       <section className="mb-14 text-center px-6">
-        <h1
-          className="text-4xl font-bold tracking-tight"
+        <FloatText
+          text="Enjoy floating with Buoy!"
+          className="text-4xl font-bold tracking-tight cursor-default"
           style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif', fontStretch: 'ultra-expanded', color: '#FCC527' }}
-        >
-          Enjoy floating with Buoy!
-        </h1>
+        />
       </section>
 
       {/* Footer */}
